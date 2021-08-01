@@ -1,0 +1,34 @@
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="crear()" novalidate>
+        <ul>
+            <li>
+                <label>Titulo</label>
+                <input formControlName="titulo" type="text">
+                <div *ngIf="formulario.controls['titulo'].errors && formulario.controls['titulo'].dirty && formulario.controls['titulo'].touched">
+                    <p *ngIf="formulario.controls['titulo'].hasError('required')" class="error">titulo requerido</p>
+                </div>
+            </li>
+            <li>
+                <label>Estado</label>
+                <select formControlName="estado">
+                    <option value="1">abierto</option>
+                    <option value="2">en proceso</option>
+                    <option value="3">cerrado</option>
+                </select>
+                <div *ngIf="formulario.controls['estado'].errors && formulario.controls['estado'].dirty && formulario.controls['estado'].touched">
+                    <p *ngIf="formulario.controls['estado'].hasError('required')" class="error">estado requerido</p>
+                </div>
+            </li>
+            <li>
+                <label>Descripcion</label>
+                <textarea formControlName="descripcion"></textarea>
+                <div *ngIf="formulario.controls['descripcion'].errors && formulario.controls['descripcion'].dirty && formulario.controls['descripcion'].touched">
+                    <p *ngIf="formulario.controls['descripcion'].hasError('required')" class="error">descripcion requerida</p>
+                </div>
+            </li>
+            <li>
+                <button type="submit" [disabled]="formulario.invalid">Actualizar</button>
+            </li>
+        </ul>
+    </form>
+</div>

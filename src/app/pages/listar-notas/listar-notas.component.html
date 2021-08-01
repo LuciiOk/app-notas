@@ -1,0 +1,49 @@
+<main>
+    <div *ngIf="lista.length==0" class="vacio">
+        <h2>No hay notas</h2>
+    </div>
+    <div>
+        <ul>
+            <li id="abierto" *ngFor="let item of abierto">
+                <a [routerLink]="['/modificar', item.id, item.titulo]">
+                    <div class="contenido">
+                        <h2>{{item.titulo}}</h2>
+                        <p>{{item.descripcion}}</p>
+                    </div>
+                </a>
+                <div class="d">
+                    <button type="submit" (click)="eliminar(item)">X</button>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li id="en-curso" *ngFor="let item of enCurso">
+                <a [routerLink]="['/modificar', item.id, item.titulo]">
+                    <div class="contenido">
+                        <h2>{{item.titulo}}</h2>
+                        <p>{{item.descripcion}}</p>
+                    </div>
+                </a>
+                <div class="d">
+                    <button type="submit" (click)="eliminar(item)">X</button>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li id="cerrado" *ngFor="let item of cerrado">
+                <a [routerLink]="['/modificar', item.id, item.titulo]">
+                    <div class="contenido">
+                        <h2>{{item.titulo}}</h2>
+                        <p>{{item.descripcion}}</p>
+                    </div>
+                </a>
+                <div class="d">
+                    <button type="submit" (click)="eliminar(item)">X</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<footer><a [routerLink]="['']" routerLinkActive="router-link-active"><Button id="actualizar">+ Adicionar</Button></a></footer>
+

@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Recursive:300,regular,500,600,700,800,900);
+
+
+$fuente: 'Recursive';
+
+label,input,button{
+    font-family: $fuente;
+}
+
+form ul {
+    list-style: none;
+    margin: 0;
+}
+
+form, ul, li, input, label, button, textarea{
+    padding: 0;
+}
+
+label {
+    display: block;
+    text-align: justify;
+    padding: 5px 0;
+}
+
+button {
+    float: right;
+    background-color:  transparent;
+    margin: 5px 0;
+    padding: 10px 40px;
+    border: solid 2px black; 
+    color: black;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    border: solid 2px black; 
+    padding: 20px 50px;
+}
+
+input,textarea, select {
+    border: solid 2px black;
+    width: 100%;
+    text-align: center;
+}
+
+input, select {
+    padding: 5px 0;
+    background-color: transparent;
+    font-family: $fuente;
+}
+
+textarea {
+    height: 100px;
+    padding: 2px;
+    resize: none;
+    font-family: $fuente;
+    font-size: 0.85em;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+$colorError:#ff3333;
+
+.error {
+    margin:1px;
+    color: $colorError;
+    font-size: 0.75em;
+    font-family: $fuente;
+}
